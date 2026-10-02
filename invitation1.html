@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aarav & Ananya | Wedding Invitation</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at center, #4a270b 0%, #1c0d03 60%, #070301 100%);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Falling petals */
+.petal {
+    position: fixed;
+    top: -30px;
+    width: 11px;
+    height: 16px;
+    background: linear-gradient(135deg, #ffd6c9, #d98978);
+    border-radius: 70% 30% 70% 30%;
+    opacity: .85;
+    animation: fall linear infinite;
+    z-index: 1;
+}
+
+.p1 { left: 5%;  animation-duration: 8s; }
+.p2 { left: 18%; animation-duration: 11s; animation-delay: 2s; }
+.p3 { left: 32%; animation-duration: 9s; animation-delay: 1s; }
+.p4 { left: 48%; animation-duration: 12s; animation-delay: 3s; }
+.p5 { left: 65%; animation-duration: 10s; animation-delay: 1s; }
+.p6 { left: 80%; animation-duration: 8s; animation-delay: 4s; }
+.p7 { left: 93%; animation-duration: 11s; animation-delay: 2s; }
+
+@keyframes fall {
+    0% {
+        transform: translateY(-30px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) translateX(100px) rotate(360deg);
+    }
+}
+
+/* Invitation card */
+.invitation {
+    position: relative;
+    width: min(90%, 650px);
+    padding: 48px 30px;
+    text-align: center;
+    color: #f8d77b;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(73, 38, 8, .98),
+            rgba(18, 8, 2, .98)
+        );
+
+    border: 2px solid #d9a93a;
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 20px rgba(255, 196, 65, .35),
+        0 0 70px rgba(255, 180, 40, .12),
+        inset 0 0 40px rgba(255, 193, 60, .08);
+
+    z-index: 2;
+}
+
+/* Golden floral decorations */
+.flower {
+    position: absolute;
+    font-size: 65px;
+    color: #e7b844;
+    text-shadow:
+        0 0 8px #ffdc70,
+        0 0 18px rgba(255, 190, 40, .5);
+}
+
+.top-left {
+    top: 5px;
+    left: 10px;
+    transform: rotate(-25deg);
+}
+
+.top-right {
+    top: 5px;
+    right: 10px;
+    transform: rotate(25deg);
+}
+
+.bottom-left {
+    bottom: 5px;
+    left: 10px;
+    transform: rotate(-155deg);
+}
+
+.bottom-right {
+    bottom: 5px;
+    right: 10px;
+    transform: rotate(155deg);
+}
+
+.ornament {
+    font-size: 22px;
+    letter-spacing: 9px;
+    color: #ffe49a;
+    text-shadow: 0 0 12px #d99b24;
+}
+
+.subtitle {
+    margin-top: 15px;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff0bd;
+}
+
+h1 {
+    margin: 15px 0 5px;
+    font-size: clamp(30px, 7vw, 50px);
+    font-weight: normal;
+    letter-spacing: 3px;
+    color: #ffd96a;
+    text-shadow: 0 0 14px rgba(255,205,75,.5);
+}
+
+.names {
+    margin: 25px 0 18px;
+    font-size: clamp(29px, 6vw, 43px);
+    font-style: italic;
+    color: #fff0b0;
+}
+
+.amp {
+    display: block;
+    margin: 4px;
+    font-size: 22px;
+    color: #d6a537;
+}
+
+.details {
+    margin: 22px auto;
+    padding: 16px;
+    max-width: 420px;
+    border-top: 1px solid #b98528;
+    border-bottom: 1px solid #b98528;
+    color: #ffe8a5;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.date {
+    font-size: 22px;
+    color: #ffd25a;
+    letter-spacing: 2px;
+}
+
+.message {
+    margin: 20px auto;
+    max-width: 430px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #fff4ce;
+    font-style: italic;
+}
+
+/* Diyas */
+.diyas {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin-top: 30px;
+}
+
+.diya {
+    position: relative;
+    width: 50px;
+    height: 23px;
+    background: linear-gradient(#e0a52e, #743e08);
+    border-radius: 0 0 50% 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,.5);
+}
+
+.flame {
+    position: absolute;
+    width: 16px;
+    height: 27px;
+    left: 17px;
+    top: -25px;
+    background: #ffd34e;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    box-shadow:
+        0 0 10px #ffb300,
+        0 0 25px #ff8c00;
+    animation: flicker .7s infinite alternate;
+}
+
+@keyframes flicker {
+    from {
+        transform: rotate(-45deg) scale(1);
+    }
+    to {
+        transform: rotate(-42deg) scale(1.15);
+    }
+}
+
+@media (max-width: 500px) {
+    .invitation {
+        padding: 40px 18px;
+    }
+
+    .names {
+        font-size: 30px;
+    }
+
+    .flower {
+        font-size: 45px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Falling flower petals -->
+<div class="petal p1"></div>
+<div class="petal p2"></div>
+<div class="petal p3"></div>
+<div class="petal p4"></div>
+<div class="petal p5"></div>
+<div class="petal p6"></div>
+<div class="petal p7"></div>
+
+<div class="invitation">
+
+    <!-- Golden floral corners -->
+    <div class="flower top-left">✿</div>
+    <div class="flower top-right">✿</div>
+    <div class="flower bottom-left">✿</div>
+    <div class="flower bottom-right">✿</div>
+
+    <div class="ornament">✦ ❈ ✦</div>
+
+    <div class="subtitle">
+        Together with their families
+    </div>
+
+    <h1>Wedding Invitation</h1>
+
+    <div class="names">
+        Aarav
+        <span class="amp">&amp;</span>
+        Ananya
+    </div>
+
+    <div class="details">
+        <div class="date">18 January 2027</div>
+        <div>7:00 PM</div>
+        <div>Royal Palace • Vijayawada</div>
+    </div>
+
+    <div class="message">
+        We invite you to celebrate<br>
+        the beginning of our beautiful journey.
+        <br><br>
+        <strong>Your presence and blessings<br>
+        mean the world to us.</strong>
+    </div>
+
+    <!-- Glowing Diyas -->
+    <div class="diyas">
+        <div class="diya">
+            <div class="flame"></div>
+        </div>
+
+        <div class="diya">
+            <div class="flame"></div>
+        </div>
+    </div>
+
+    <div class="ornament" style="margin-top:25px;">
+        ❈ ✦ ❈
+    </div>
+
+</div>
+
+</body>
+</html>
